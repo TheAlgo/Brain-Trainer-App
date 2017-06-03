@@ -76,35 +76,9 @@ public class MainActivity extends AppCompatActivity {
         b4 = (Button) findViewById(R.id.button3);
         r1=(RelativeLayout)findViewById(R.id.r1);
         generatequestion();
-
-        new CountDownTimer(30000,1000) {
-
-
-            @Override
-            public void onTick(long millisUntilFinished) {
-                timer.setText(Long.toString((millisUntilFinished/1000))+"s");
-
-            }
-
-            @Override
-            public void onFinish() {
-                playagain.setVisibility(View.VISIBLE);
-
-timer.setText("0s");
-                correct.setText("Your final score "+Integer.toString(score));
-
-
-
-            }
-        }.start();
         playagain(findViewById(R.id.button3));
 
     }
-
-
-
-
-
     public void start(View view) {
         start.setVisibility(View.INVISIBLE);
         r1.setVisibility(View.VISIBLE);
@@ -122,7 +96,7 @@ timer.setText("0s");
         }
         noofquestion++;
         score1.setText(Integer.toString(score)+"/"+ Integer.toString(noofquestion));
-        generatequestion();
+       generatequestion();
 
     }
 
@@ -145,10 +119,14 @@ timer.setText("0s");
 
             @Override
             public void onFinish() {
-
+                playagain.setVisibility(View.VISIBLE);
+                timer.setText("0s");
+                correct.setText("Your final score "+Integer.toString(score));
 
             }
         }.start();
+        generatequestion();
+       // playagain(findViewById(R.id.button3));
 
     }
 }

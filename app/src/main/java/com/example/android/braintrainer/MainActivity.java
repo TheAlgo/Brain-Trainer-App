@@ -5,8 +5,10 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button start,b1,b2,b3,b4,playagain;
     Random random;
     RelativeLayout r1;
+    GridLayout g1;
     int a,b,actualsum,incorrect,locationCorrectAnswer,score=0,noofquestion=0;
 
     ArrayList <Integer> answers;
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         start = (Button) findViewById(R.id.startButton);
         score1 = (TextView) findViewById(R.id.scoretextview);
         question = (TextView) findViewById(R.id.questextview);
-
+        g1=(GridLayout)findViewById(R.id.gridlayoutmain);
 
         b1 = (Button) findViewById(R.id.button0);
         b2 = (Button) findViewById(R.id.button1);
@@ -101,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playagain(View view) {
-
         playagain.setVisibility(View.INVISIBLE);
+        g1.setVisibility(View.VISIBLE);
         score=0;
         noofquestion=0;
         timer.setText("30s");
@@ -121,7 +124,9 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
                 playagain.setVisibility(View.VISIBLE);
                 timer.setText("0s");
-                correct.setText("Your final score "+Integer.toString(score));
+                g1.setVisibility(View.INVISIBLE);
+                correct.setVisibility(View.INVISIBLE);
+                Toast.makeText(getApplicationContext(),"Your Final Score is "+score,Toast.LENGTH_LONG).show();
 
             }
         }.start();

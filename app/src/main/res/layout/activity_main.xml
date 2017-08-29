@@ -20,7 +20,6 @@
         android:textSize="30sp"
         android:elevation="24dp"
         android:onClick="start"
-
         android:background="@android:color/holo_green_light"
         android:padding="60dp"
         android:textStyle="normal|bold"
@@ -33,15 +32,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="invisible"
-        android:id="@+id/r1">
+        android:id="@+id/r1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/resulttextview"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignEnd="@+id/questextview"
             android:layout_marginBottom="68dp"
-            android:id="@+id/resulttextview"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
         <Button
@@ -59,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="47dp"
+            android:id="@+id/gridlayoutmain"
             android:layout_below="@+id/timertextview"
             android:columnCount="2"
             android:rowCount="2"
@@ -75,7 +76,7 @@
                 android:id="@+id/button0"
                 android:tag="0"
                 android:textAppearance="@style/TextAppearance.AppCompat"
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:onClick="choose" />
             <Button
                 android:text="3"
@@ -87,7 +88,7 @@
                 android:textSize="80sp"
                 android:tag="1"
                 android:id="@+id/button1"
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:onClick="choose" />
             <Button
                 android:text="3"
@@ -99,7 +100,7 @@
                 android:tag="2"
                 android:background="#E53935"
                 android:id="@+id/button2"
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:onClick="choose" />
             <Button
                 android:text="3"
@@ -111,7 +112,7 @@
                 android:background="#FFCDD2"
                 android:textStyle="bold"
                 android:id="@+id/button3"
-                android:layout_width="180dp"
+                android:layout_width="160dp"
                 android:onClick="choose" />
         </GridLayout>
 
@@ -131,7 +132,6 @@
             android:text="0/0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/timertextview"
             android:textStyle="bold"
             android:layout_alignParentEnd="true"
             android:id="@+id/scoretextview"
@@ -144,7 +144,6 @@
             android:layout_alignBottom="@+id/timertextview"
             android:layout_centerHorizontal="true"
             android:textStyle="bold"
-
             android:id="@+id/questextview"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
     </RelativeLayout>

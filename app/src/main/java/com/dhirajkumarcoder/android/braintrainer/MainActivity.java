@@ -1,4 +1,4 @@
-package com.example.android.braintrainer;
+package com.dhirajkumarcoder.android.braintrainer;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
